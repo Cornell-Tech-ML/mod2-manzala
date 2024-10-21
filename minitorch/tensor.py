@@ -268,7 +268,6 @@ class Tensor:
         This method is called when the output of `backward`
         is a different size than the input of `forward`.
 
-
         Args:
         ----
             other : backward tensor (must broadcast with self)
@@ -276,7 +275,6 @@ class Tensor:
         Returns:
         -------
             Expanded version of `other` with the right derivatives
-
         """
         # Case 1: Both the same shape.
         if self.shape == other.shape:
