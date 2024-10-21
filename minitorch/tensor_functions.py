@@ -1,6 +1,4 @@
-"""
-Implementation of the autodifferentiation Functions for Tensor.
-"""
+"""Implementation of the autodifferentiation Functions for Tensor."""
 
 from __future__ import annotations
 
@@ -23,7 +21,7 @@ if TYPE_CHECKING:
 
 
 def wrap_tuple(x):  # type: ignore
-    "Turn a possible value into a tuple"
+    """Turn a possible value into a tuple"""
     if isinstance(x, tuple):
         return x
     return (x,)
@@ -31,49 +29,54 @@ def wrap_tuple(x):  # type: ignore
 
 # Constructors
 class Function:
-    """
-    Base class for all differentiable functions.
+    """Base class for all differentiable functions.
     Provides the apply method for automatic differentiation.
     """
 
     @classmethod
     def _backward(cls, ctx: Context, grad_out: Tensor) -> Tuple[Tensor, ...]:
-        """
-        Execute the backward pass to compute gradients.
+        """Execute the backward pass to compute gradients.
 
         Args:
+        ----
             ctx: Context object storing intermediate values from forward pass.
             grad_out: Tensor representing the gradient of the output.
 
         Returns:
+        -------
             Tuple of Tensors containing the gradients for each input.
+
         """
         return wrap_tuple(cls.backward(ctx, grad_out))  # type: ignore
 
     @classmethod
     def _forward(cls, ctx: Context, *inps: Tensor) -> Tensor:
-        """
-        Execute the forward pass.
+        """Execute the forward pass.
 
         Args:
+        ----
             ctx: Context object to store intermediate values for backward pass.
             *inps: Input tensors.
 
         Returns:
+        -------
             Resultant Tensor.
+
         """
         return cls.forward(ctx, *inps)  # type: ignore
 
     @classmethod
     def apply(cls, *vals: Tensor) -> Tensor:
-        """
-        Apply the function to the input tensors.
+        """Apply the function to the input tensors.
 
         Args:
+        ----
             *vals: Input tensors.
 
         Returns:
+        -------
             Resultant Tensor.
+
         """
         raw_vals = []
         need_grad = False
@@ -96,134 +99,142 @@ class Function:
 
 
 class Neg(Function):
-    """
-    Negation function for tensors.
-    """
+    """Negation function for tensors."""
 
     @staticmethod
     def forward(ctx: Context, t1: Tensor) -> Tensor:
-        """
-        Forward pass for negation.
+        """Forward pass for negation.
 
         Args:
+        ----
             t1: Input tensor.
 
         Returns:
+        -------
             Negated tensor.
+
         """
         return t1.f.neg_map(t1)
 
     @staticmethod
     def backward(ctx: Context, grad_output: Tensor) -> Tensor:
-        """
-        Backward pass for negation.
+        """Backward pass for negation.
 
         Args:
+        ----
             grad_output: Gradient of the output.
 
         Returns:
+        -------
             Gradient of the input.
+
         """
         return grad_output.f.neg_map(grad_output)
 
 
 class Inv(Function):
-    """
-    Inversion function for tensors.
-    """
+    """Inversion function for tensors."""
 
     @staticmethod
     def forward(ctx: Context, t1: Tensor) -> Tensor:
-        """
-        Forward pass for inversion.
+        """Forward pass for inversion.
 
         Args:
+        ----
             t1: Input tensor.
 
         Returns:
+        -------
             Inverted tensor.
+
         """
         ctx.save_for_backward(t1)
         return t1.f.inv_map(t1)
 
     @staticmethod
     def backward(ctx: Context, grad_output: Tensor) -> Tensor:
-        """
-        Backward pass for inversion.
+        """Backward pass for inversion.
 
         Args:
+        ----
             grad_output: Gradient of the output.
 
         Returns:
+        -------
             Gradient of the input.
+
         """
         (t1,) = ctx.saved_values
         return grad_output.f.inv_back_zip(t1, grad_output)
 
 
 class Add(Function):
-    """
-    Addition function for tensors.
-    """
+    """Addition function for tensors."""
 
     @staticmethod
     def forward(ctx: Context, t1: Tensor, t2: Tensor) -> Tensor:
-        """
-        Forward pass for addition.
+        """Forward pass for addition.
 
         Args:
+        ----
             t1: First input tensor.
             t2: Second input tensor.
 
         Returns:
+        -------
             Sum of the two tensors.
+
         """
         return t1.f.add_zip(t1, t2)
 
     @staticmethod
     def backward(ctx: Context, grad_output: Tensor) -> Tuple[Tensor, Tensor]:
-        """
-        Backward pass for addition.
+        """Backward pass for addition.
 
         Args:
+        ----
             grad_output: Gradient of the output.
 
         Returns:
+        -------
             Gradients for each input.
+
         """
         return grad_output, grad_output
 
 
 class Mul(Function):
-    """
-    Multiplication function for tensors.
-    """
+    """Multiplication function for tensors."""
 
     @staticmethod
     def forward(ctx: Context, a: Tensor, b: Tensor) -> Tensor:
-        """
-        Forward pass for multiplication.
+        """Forward pass for multiplication.
 
         Args:
+        ----
             a: First input tensor.
             b: Second input tensor.
 
         Returns:
+        -------
             Product of the two tensors.
+
         """
         ctx.save_for_backward(a, b)
         return a.f.mul_zip(a, b)
 
     @staticmethod
     def backward(ctx: Context, grad_output: Tensor) -> Tuple[Tensor, Tensor]:
-        """
-        Backward pass for multiplication.
+        """Backward pass for multiplication.
 
         Args:
+        ----
             grad_output: Gradient of the output.
 
         Returns:
+        -------
             Gradients for each input.
+
         """
         a, b = ctx.saved_values
         return grad_output.f.mul_zip(grad_output, b), grad_output.f.mul_zip(
@@ -232,20 +243,20 @@ class Mul(Function):
 
 
 class Sigmoid(Function):
-    """
-    Sigmoid activation function for tensors.
-    """
+    """Sigmoid activation function for tensors."""
 
     @staticmethod
     def forward(ctx: Context, t1: Tensor) -> Tensor:
-        """
-        Forward pass for the sigmoid function.
+        """Forward pass for the sigmoid function.
 
         Args:
+        ----
             t1: Input tensor.
 
         Returns:
+        -------
             Sigmoid of the input tensor.
+
         """
         output = t1.f.sigmoid_map(t1)
         ctx.save_for_backward(output)
@@ -253,48 +264,52 @@ class Sigmoid(Function):
 
     @staticmethod
     def backward(ctx: Context, grad_output: Tensor) -> Tensor:
-        """
-        Backward pass for the sigmoid function.
+        """Backward pass for the sigmoid function.
 
         Args:
+        ----
             grad_output: Gradient of the output.
 
         Returns:
+        -------
             Gradient of the input.
+
         """
         (output,) = ctx.saved_values
         return grad_output.f.mul_zip(grad_output, output * (-output + 1.0))
 
 
 class ReLU(Function):
-    """
-    ReLU activation function for tensors.
-    """
+    """ReLU activation function for tensors."""
 
     @staticmethod
     def forward(ctx: Context, t1: Tensor) -> Tensor:
-        """
-        Forward pass for ReLU.
+        """Forward pass for ReLU.
 
         Args:
+        ----
             t1: Input tensor.
 
         Returns:
+        -------
             ReLU of the input tensor.
+
         """
         ctx.save_for_backward(t1)
         return t1.f.relu_map(t1)
 
     @staticmethod
     def backward(ctx: Context, grad_output: Tensor) -> Tensor:
-        """
-        Backward pass for ReLU.
+        """Backward pass for ReLU.
 
         Args:
+        ----
             grad_output: Gradient of the output.
 
         Returns:
+        -------
             Gradient of the input.
+
         """
         (t1,) = ctx.saved_values
         return grad_output.f.relu_back_zip(t1, grad_output)
@@ -466,15 +481,17 @@ class MatMul(Function):
 
 # Helpers for Constructing tensors
 def zeros(shape: UserShape, backend: TensorBackend = SimpleBackend) -> Tensor:
-    """
-    Produce a zero tensor of size `shape`.
+    """Produce a zero tensor of size `shape`.
 
     Args:
+    ----
         shape : shape of tensor
         backend : tensor backend
 
     Returns:
+    -------
         new tensor
+
     """
     return minitorch.Tensor.make(
         [0] * int(operators.prod(shape)), shape, backend=backend
@@ -486,16 +503,18 @@ def rand(
     backend: TensorBackend = SimpleBackend,
     requires_grad: bool = False,
 ) -> Tensor:
-    """
-    Produce a random tensor of size `shape`.
+    """Produce a random tensor of size `shape`.
 
     Args:
+    ----
         shape : shape of tensor
         backend : tensor backend
         requires_grad : turn on autodifferentiation
 
     Returns:
+    -------
         :class:`Tensor` : new tensor
+
     """
     vals = [random.random() for _ in range(int(operators.prod(shape)))]
     tensor = minitorch.Tensor.make(vals, shape, backend=backend)
@@ -509,17 +528,19 @@ def _tensor(
     backend: TensorBackend = SimpleBackend,
     requires_grad: bool = False,
 ) -> Tensor:
-    """
-    Produce a tensor with data ls and shape `shape`.
+    """Produce a tensor with data ls and shape `shape`.
 
     Args:
+    ----
         ls: data for tensor
         shape: shape of tensor
         backend: tensor backend
         requires_grad: turn on autodifferentiation
 
     Returns:
+    -------
         new tensor
+
     """
     tensor = minitorch.Tensor.make(ls, shape, backend=backend)
     tensor.requires_grad_(requires_grad)
@@ -529,16 +550,18 @@ def _tensor(
 def tensor(
     ls: Any, backend: TensorBackend = SimpleBackend, requires_grad: bool = False
 ) -> Tensor:
-    """
-    Produce a tensor with data and shape from ls
+    """Produce a tensor with data and shape from ls
 
     Args:
+    ----
         ls: data for tensor
         backend : tensor backend
         requires_grad : turn on autodifferentiation
 
     Returns:
+    -------
         :class:`Tensor` : new tensor
+
     """
 
     def shape(ls: Any) -> List[int]:

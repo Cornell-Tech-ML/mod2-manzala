@@ -7,7 +7,6 @@ from typing_extensions import Protocol
 
 from . import operators
 from .tensor_data import (
-    MAX_DIMS,
     broadcast_index,
     index_to_position,
     shape_broadcast,
@@ -16,12 +15,11 @@ from .tensor_data import (
 
 if TYPE_CHECKING:
     from .tensor import Tensor
-    from .tensor_data import Index, Shape, Storage, Strides
+    from .tensor_data import Shape, Storage, Strides
 
 
 class MapProto(Protocol):
-    def __call__(self, x: Tensor, out: Optional[Tensor] = ..., /) -> Tensor:
-        ...
+    def __call__(self, x: Tensor, out: Optional[Tensor] = ..., /) -> Tensor: ...
 
 
 class TensorOps:
@@ -52,11 +50,11 @@ class TensorOps:
 
 class TensorBackend:
     def __init__(self, ops: Type[TensorOps]):
-        """
-        Dynamically construct a tensor backend based on a `tensor_ops` object
+        """Dynamically construct a tensor backend based on a `tensor_ops` object
         that implements map, zip, and reduce higher-order functions.
 
         Args:
+        ----
             ops : tensor operations object see `tensor_ops.py`
 
 
@@ -64,7 +62,6 @@ class TensorBackend:
             A collection of tensor functions
 
         """
-
         # Maps
         self.neg_map = ops.map(operators.neg)
         self.sigmoid_map = ops.map(operators.sigmoid)
@@ -95,8 +92,7 @@ class TensorBackend:
 class SimpleOps(TensorOps):
     @staticmethod
     def map(fn: Callable[[float], float]) -> MapProto:
-        """
-        Higher-order tensor map function ::
+        """Higher-order tensor map function ::
 
           fn_map = map(fn)
           fn_map(a, out)
@@ -115,15 +111,17 @@ class SimpleOps(TensorOps):
                     out[i, j] = fn(a[i, 0])
 
         Args:
+        ----
             fn: function from float-to-float to apply.
             a (:class:`TensorData`): tensor to map over
             out (:class:`TensorData`): optional, tensor data to fill in,
                    should broadcast with `a`
 
         Returns:
+        -------
             new tensor data
-        """
 
+        """
         f = tensor_map(fn)
 
         def ret(a: Tensor, out: Optional[Tensor] = None) -> Tensor:
@@ -136,10 +134,9 @@ class SimpleOps(TensorOps):
 
     @staticmethod
     def zip(
-        fn: Callable[[float, float], float]
+        fn: Callable[[float, float], float],
     ) -> Callable[["Tensor", "Tensor"], "Tensor"]:
-        """
-        Higher-order tensor zip function ::
+        """Higher-order tensor zip function ::
 
           fn_zip = zip(fn)
           out = fn_zip(a, b)
@@ -158,14 +155,16 @@ class SimpleOps(TensorOps):
 
 
         Args:
+        ----
             fn: function from two floats-to-float to apply
             a (:class:`TensorData`): tensor to zip over
             b (:class:`TensorData`): tensor to zip over
 
         Returns:
+        -------
             :class:`TensorData` : new tensor data
-        """
 
+        """
         f = tensor_zip(fn)
 
         def ret(a: "Tensor", b: "Tensor") -> "Tensor":
@@ -183,8 +182,7 @@ class SimpleOps(TensorOps):
     def reduce(
         fn: Callable[[float, float], float], start: float = 0.0
     ) -> Callable[["Tensor", int], "Tensor"]:
-        """
-        Higher-order tensor reduce function. ::
+        """Higher-order tensor reduce function. ::
 
           fn_reduce = reduce(fn)
           out = fn_reduce(a, dim)
@@ -198,12 +196,15 @@ class SimpleOps(TensorOps):
 
 
         Args:
+        ----
             fn: function from two floats-to-float to apply
             a (:class:`TensorData`): tensor to reduce over
             dim (int): int of dim to reduce
 
         Returns:
+        -------
             :class:`TensorData` : new tensor
+
         """
         f = tensor_reduce(fn)
 
@@ -231,8 +232,7 @@ class SimpleOps(TensorOps):
 
 
 def tensor_map(fn: Callable[[float], float]) -> Any:
-    """
-    Low-level implementation of tensor map between
+    """Low-level implementation of tensor map between
     tensors with *possibly different strides*.
 
     Simple version:
@@ -248,6 +248,7 @@ def tensor_map(fn: Callable[[float], float]) -> Any:
       broadcast. (`in_shape` must be smaller than `out_shape`).
 
     Args:
+    ----
         fn: function from float-to-float to apply
         out (array): storage for out tensor
         out_shape (array): shape for out tensor
@@ -257,7 +258,9 @@ def tensor_map(fn: Callable[[float], float]) -> Any:
         in_strides (array): strides for in tensor
 
     Returns:
+    -------
         None : Fills in `out`
+
     """
 
     def _map(
@@ -281,8 +284,7 @@ def tensor_map(fn: Callable[[float], float]) -> Any:
 
 
 def tensor_zip(fn: Callable[[float, float], float]) -> Any:
-    """
-    Low-level implementation of tensor zip between
+    """Low-level implementation of tensor zip between
     tensors with *possibly different strides*.
 
     Simple version:
@@ -298,6 +300,7 @@ def tensor_zip(fn: Callable[[float, float], float]) -> Any:
       and `b_shape` broadcast to `out_shape`.
 
     Args:
+    ----
         fn: function mapping two floats to float to apply
         out (array): storage for `out` tensor
         out_shape (array): shape for `out` tensor
@@ -310,7 +313,9 @@ def tensor_zip(fn: Callable[[float, float], float]) -> Any:
         b_strides (array): strides for `b` tensor
 
     Returns:
+    -------
         None : Fills in `out`
+
     """
 
     def _zip(
@@ -342,13 +347,13 @@ def tensor_zip(fn: Callable[[float, float], float]) -> Any:
 
 
 def tensor_reduce(fn: Callable[[float, float], float]) -> Any:
-    """
-    Low-level implementation of tensor reduce.
+    """Low-level implementation of tensor reduce.
 
     * `out_shape` will be the same as `a_shape`
        except with `reduce_dim` turned to size `1`
 
     Args:
+    ----
         fn: reduction function mapping two floats to float
         out (array): storage for `out` tensor
         out_shape (array): shape for `out` tensor
@@ -359,7 +364,9 @@ def tensor_reduce(fn: Callable[[float, float], float]) -> Any:
         reduce_dim (int): dimension to reduce out
 
     Returns:
+    -------
         None : Fills in `out`
+
     """
 
     def _reduce(
