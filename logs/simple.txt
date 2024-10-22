@@ -178,7 +178,7 @@ warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (
 minitorch/tensor.py:39:36: F821 Undefined name `Tensor`
    |
 37 |     from .tensor_ops import TensorBackend
-38 | 
+38 |
 39 |     TensorLike = Union[float, int, Tensor]
    |                                    ^^^^^^ F821
    |
@@ -380,13 +380,13 @@ pyright..................................................................Failed
   /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
 5 errors, 0 warnings, 0 informations
 
-(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pytest .            
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pytest .
 =========================================================== test session starts ============================================================
 platform darwin -- Python 3.11.2, pytest-8.3.2, pluggy-1.5.0
 rootdir: /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala
 configfile: pyproject.toml
 plugins: hypothesis-6.54.0, env-1.1.3
-collected 68 items                                                                                                                         
+collected 68 items
 
 tests/test_tensor.py .......................................................xx....                                                   [ 89%]
 tests/test_tensor_data.py .x.....                                                                                                    [100%]
@@ -436,7 +436,7 @@ pyright..................................................................Failed
 Epoch: 0/500, loss: 0, correct: 0
 2024-10-21 22:06:23.132 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
 ^C  Stopping...
-(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all                        
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
 check for added large files..............................................Passed
 check for case conflicts.................................................Passed
 check docstring is first.................................................Passed
@@ -544,7 +544,7 @@ Failed
   /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
 4 errors, 0 warnings, 0 informations
 
-(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % 
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala %
 (.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
 check for added large files..............................................Passed
 check for case conflicts.................................................Passed

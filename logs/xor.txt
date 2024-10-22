@@ -486,7 +486,7 @@ Epoch: 610/625, loss: 32.08354213285351, correct: 32
 Epoch: 620/625, loss: 32.08338854034042, correct: 32
 Epoch: 625/625, loss: 32.08331626047457, correct: 32
 ^C  Stopping...
-^[[A%                                                 
+^[[A%
 syedakazmi-shah@Syedas-MBP mod2-manzala % python3 -m streamlit run project/app.py -- 2
 
   You can now view your Streamlit app in your browser.
