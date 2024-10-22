@@ -1,3 +1,9 @@
+"""minitorch package.
+
+This package provides core components for creating and manipulating tensors,
+implementing autograd functionality, and performing tensor operations.
+"""
+
 from .testing import MathTest, MathTestVariable  # type: ignore # noqa: F401,F403
 from .tensor_data import *  # noqa: F401,F403
 from .tensor import *  # noqa: F401,F403
