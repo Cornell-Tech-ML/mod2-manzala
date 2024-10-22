@@ -288,6 +288,9 @@ class Tensor:
         backend: Optional[TensorBackend] = None,
     ) -> Tensor:
         """Creates a new tensor from the provided data."""
+        # Fix to ensure compatibility with Storage
+        if isinstance(storage, list):
+            storage = [float(x) for x in storage]
         return Tensor(TensorData(storage, shape, strides), backend=backend)
 
     def expand(self, other: Tensor) -> Tensor:

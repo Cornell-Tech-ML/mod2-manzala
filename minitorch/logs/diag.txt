@@ -1,0 +1,953 @@
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+5 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Failed
+- hook id: ruff-format
+- files were modified by this hook
+
+warning: The top-level linter settings are deprecated in favour of their counterparts in the `lint` section. Please update the following options in `pyproject.toml`:
+  - 'fixable' -> 'lint.fixable'
+  - 'ignore' -> 'lint.ignore'
+  - 'select' -> 'lint.select'
+  - 'unfixable' -> 'lint.unfixable'
+  - 'extend-per-file-ignores' -> 'lint.extend-per-file-ignores'
+warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.
+1 file reformatted, 18 files left unchanged
+
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:30 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:67 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:127:39 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:352:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+5 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:30 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:67 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:127:39 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:355:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+5 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pytest .            
+=========================================================== test session starts ============================================================
+platform darwin -- Python 3.11.2, pytest-8.3.2, pluggy-1.5.0
+rootdir: /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala
+configfile: pyproject.toml
+plugins: hypothesis-6.54.0, env-1.1.3
+collected 68 items                                                                                                                         
+
+tests/test_tensor.py .......................................................xx....                                                   [ 89%]
+tests/test_tensor_data.py .x.....                                                                                                    [100%]
+
+====================================================== 65 passed, 3 xfailed in 17.01s ======================================================
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:30 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:67 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:127:39 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:355:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+5 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % python3 -m streamlit run project/app.py -- 2
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.175:8501
+
+2024-10-21 22:06:19.236 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:06:21.137 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 0/500, loss: 0, correct: 0
+2024-10-21 22:06:23.132 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+^C  Stopping...
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all                        
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:30 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:67 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:127:39 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:355:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+5 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Failed
+- hook id: ruff-format
+- files were modified by this hook
+
+warning: The top-level linter settings are deprecated in favour of their counterparts in the `lint` section. Please update the following options in `pyproject.toml`:
+  - 'fixable' -> 'lint.fixable'
+  - 'ignore' -> 'lint.ignore'
+  - 'select' -> 'lint.select'
+  - 'unfixable' -> 'lint.unfixable'
+  - 'extend-per-file-ignores' -> 'lint.extend-per-file-ignores'
+warning: `one-blank-line-before-class` (D203) and `no-blank-line-before-class` (D211) are incompatible. Ignoring `one-blank-line-before-class`.
+1 file reformatted, 18 files left unchanged
+
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:30 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:124:67 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:127:39 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:355:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+5 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+pyright..................................................................
+Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:122:22 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:123:35 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:355:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+4 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % 
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % pre-commit run --all
+check for added large files..............................................Passed
+check for case conflicts.................................................Passed
+check docstring is first.................................................Passed
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+check toml...............................................................Passed
+debug statements (python)................................................Passed
+mixed line ending........................................................Passed
+fix requirements.txt.....................................................Passed
+trim trailing whitespace.................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:122:22 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor_data.py:123:35 - error: "cuda" is not a known attribute of module "numba" (reportAttributeAccessIssue)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/minitorch/tensor.py:355:17 - error: Argument of type "list[int]" cannot be assigned to parameter "storage" of type "Storage | List[float]" in function "make"
+    Type "list[int]" is incompatible with type "Storage | List[float]"
+      "list[int]" is incompatible with "ndarray[Any, dtype[float64]]"
+      "list[int]" is incompatible with "List[float]"
+        Type parameter "_T@list" is invariant, but "int" is not the same as "float"
+        Consider switching from "list" to "Sequence" which is covariant (reportArgumentType)
+/Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py
+  /Users/syedakazmi-shah/Documents/Cornell/MLE/mod2-manzala/tests/strategies.py:17:32 - error: "is_close" is not a known attribute of module "minitorch" (reportAttributeAccessIssue)
+4 errors, 0 warnings, 0 informations
+
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % python3 -m streamlit run project/app.py -- 2
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.175:8501
+
+2024-10-21 22:15:55.536 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:16:07.505 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 0/500, loss: 0, correct: 0
+2024-10-21 22:16:09.099 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 0/500, loss: 0, correct: 0
+2024-10-21 22:16:12.524 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 34.64855059320463, correct: 26
+Epoch: 20/500, loss: 34.62594624380234, correct: 26
+Epoch: 30/500, loss: 34.61970307027687, correct: 26
+Epoch: 40/500, loss: 34.61799114278705, correct: 26
+Epoch: 50/500, loss: 34.617523520613354, correct: 26
+Epoch: 60/500, loss: 34.61739604591855, correct: 26
+Epoch: 70/500, loss: 34.617361333024256, correct: 26
+Epoch: 80/500, loss: 34.61735188554427, correct: 26
+Epoch: 90/500, loss: 34.61734931506035, correct: 26
+Epoch: 100/500, loss: 34.61734861578546, correct: 26
+Epoch: 110/500, loss: 34.61734842556969, correct: 26
+Epoch: 120/500, loss: 34.61734837382958, correct: 26
+Epoch: 130/500, loss: 34.61734835975621, correct: 26
+Epoch: 140/500, loss: 34.61734835592827, correct: 26
+Epoch: 150/500, loss: 34.61734835488707, correct: 26
+Epoch: 160/500, loss: 34.61734835460387, correct: 26
+Epoch: 170/500, loss: 34.61734835452687, correct: 26
+Epoch: 180/500, loss: 34.617348354505936, correct: 26
+Epoch: 190/500, loss: 34.61734835450022, correct: 26
+Epoch: 200/500, loss: 34.61734835449867, correct: 26
+Epoch: 210/500, loss: 34.61734835449822, correct: 26
+Epoch: 220/500, loss: 34.6173483544981, correct: 26
+Epoch: 230/500, loss: 34.61734835449809, correct: 26
+Epoch: 240/500, loss: 34.61734835449808, correct: 26
+Epoch: 250/500, loss: 34.61734835449809, correct: 26
+Epoch: 260/500, loss: 34.61734835449809, correct: 26
+Epoch: 270/500, loss: 34.61734835449806, correct: 26
+Epoch: 280/500, loss: 34.61734835449807, correct: 26
+Epoch: 290/500, loss: 34.61734835449808, correct: 26
+Epoch: 300/500, loss: 34.61734835449806, correct: 26
+Epoch: 310/500, loss: 34.61734835449807, correct: 26
+Epoch: 320/500, loss: 34.61734835449808, correct: 26
+Epoch: 330/500, loss: 34.61734835449806, correct: 26
+Epoch: 340/500, loss: 34.61734835449808, correct: 26
+Epoch: 350/500, loss: 34.61734835449807, correct: 26
+Epoch: 360/500, loss: 34.617348354498084, correct: 26
+Epoch: 370/500, loss: 34.61734835449808, correct: 26
+Epoch: 380/500, loss: 34.61734835449806, correct: 26
+Epoch: 390/500, loss: 34.617348354498056, correct: 26
+Epoch: 400/500, loss: 34.61734835449809, correct: 26
+Epoch: 410/500, loss: 34.61734835449806, correct: 26
+Epoch: 420/500, loss: 34.61734835449807, correct: 26
+Epoch: 430/500, loss: 34.61734835449807, correct: 26
+Epoch: 440/500, loss: 34.617348354498084, correct: 26
+Epoch: 450/500, loss: 34.6173483544981, correct: 26
+Epoch: 460/500, loss: 34.61734835449806, correct: 26
+Epoch: 470/500, loss: 34.61734835449808, correct: 26
+Epoch: 480/500, loss: 34.61734835449808, correct: 26
+Epoch: 490/500, loss: 34.61734835449808, correct: 26
+Epoch: 500/500, loss: 34.61734835449808, correct: 26
+Epoch: 0/500, loss: 0, correct: 0
+2024-10-21 22:16:44.681 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 10/500, loss: 34.51054596300179, correct: 26
+Epoch: 20/500, loss: 33.84871051005834, correct: 26
+Epoch: 30/500, loss: 33.21729493417275, correct: 33
+Epoch: 40/500, loss: 32.50839630991236, correct: 36
+Epoch: 50/500, loss: 31.63120609165922, correct: 37
+Epoch: 60/500, loss: 30.660889391122474, correct: 40
+Epoch: 70/500, loss: 29.54745111798376, correct: 41
+Epoch: 80/500, loss: 28.25799924863464, correct: 41
+Epoch: 90/500, loss: 26.854203765750658, correct: 41
+Epoch: 100/500, loss: 25.42717628585326, correct: 40
+Epoch: 110/500, loss: 23.98152297208881, correct: 40
+Epoch: 120/500, loss: 22.57146187302179, correct: 41
+Epoch: 130/500, loss: 21.21225393646318, correct: 42
+Epoch: 140/500, loss: 19.962373698299672, correct: 44
+Epoch: 150/500, loss: 18.838055149907305, correct: 45
+Epoch: 160/500, loss: 17.854163359010425, correct: 46
+Epoch: 170/500, loss: 16.92569051321306, correct: 46
+Epoch: 180/500, loss: 16.046570344661664, correct: 46
+Epoch: 190/500, loss: 15.218183832414685, correct: 46
+Epoch: 200/500, loss: 14.470967093321608, correct: 46
+Epoch: 210/500, loss: 13.776891117370207, correct: 46
+Epoch: 220/500, loss: 13.129666192861148, correct: 46
+Epoch: 230/500, loss: 12.52922776522372, correct: 46
+Epoch: 240/500, loss: 12.009284873950769, correct: 46
+Epoch: 250/500, loss: 11.524732817242999, correct: 46
+Epoch: 260/500, loss: 11.07153939026104, correct: 46
+Epoch: 270/500, loss: 10.6481916772452, correct: 46
+Epoch: 280/500, loss: 10.252253153046341, correct: 46
+Epoch: 290/500, loss: 9.88151862557539, correct: 46
+Epoch: 300/500, loss: 9.534208190957168, correct: 47
+Epoch: 310/500, loss: 9.208600183647011, correct: 47
+Epoch: 320/500, loss: 8.903041879329166, correct: 47
+Epoch: 330/500, loss: 8.616055327580133, correct: 48
+Epoch: 340/500, loss: 8.346106275741276, correct: 48
+Epoch: 350/500, loss: 8.091743849336336, correct: 48
+Epoch: 360/500, loss: 7.851681569457578, correct: 49
+Epoch: 370/500, loss: 7.624735624871469, correct: 49
+Epoch: 380/500, loss: 7.413048949805135, correct: 49
+Epoch: 390/500, loss: 7.224791962876821, correct: 49
+Epoch: 400/500, loss: 7.0499778509740985, correct: 49
+Epoch: 410/500, loss: 6.882756766674604, correct: 49
+Epoch: 420/500, loss: 6.723587563246244, correct: 49
+Epoch: 430/500, loss: 6.571022815100759, correct: 49
+Epoch: 440/500, loss: 6.424953725034409, correct: 49
+Epoch: 450/500, loss: 6.284450821136381, correct: 49
+Epoch: 460/500, loss: 6.1491073565065175, correct: 49
+Epoch: 470/500, loss: 6.018540857219173, correct: 50
+Epoch: 480/500, loss: 5.892399628445169, correct: 50
+Epoch: 490/500, loss: 5.7704055301867285, correct: 50
+Epoch: 500/500, loss: 5.652291474415628, correct: 50
+^C  Stopping...
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % python3 -m streamlit run project/app.py -- 2
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.175:8501
+
+
+  A new version of Streamlit is available.
+
+  See what's new at https://discuss.streamlit.io/c/announcements
+
+  Enter the following command to upgrade:
+  $ pip install streamlit --upgrade
+
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 0/500, loss: 0, correct: 0
+2024-10-21 22:17:27.623 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:17:27.785 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:17:27.888 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+^[[A^C  Stopping...
+(.venv) syedakazmi-shah@Syedas-MBP mod2-manzala % python3 -m streamlit run project/app.py -- 2
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.175:8501
+
+2024-10-21 22:17:47.761 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:17:48.008 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:17:48.225 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+2024-10-21 22:17:49.453 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 0/500, loss: 0, correct: 0
+2024-10-21 22:17:51.110 Examining the path of torch.classes raised: Tried to instantiate class '__path__._path', but it does not exist! Ensure that it is registered via torch::class_
+Epoch: 10/500, loss: 41.1283069117717, correct: 21
+Epoch: 20/500, loss: 39.17183975373808, correct: 21
+Epoch: 30/500, loss: 37.78836669086294, correct: 21
+Epoch: 40/500, loss: 36.83128878361362, correct: 21
+Epoch: 50/500, loss: 36.182493861786284, correct: 21
+Epoch: 60/500, loss: 35.74742967158735, correct: 17
+Epoch: 70/500, loss: 35.45440705017554, correct: 6
+Epoch: 80/500, loss: 35.25261229992243, correct: 24
+Epoch: 90/500, loss: 35.108203436525024, correct: 29
+Epoch: 100/500, loss: 34.9997378727798, correct: 29
+Epoch: 110/500, loss: 34.914099013138475, correct: 29
+Epoch: 120/500, loss: 34.843423303890596, correct: 29
+Epoch: 130/500, loss: 34.78302027060083, correct: 29
+Epoch: 140/500, loss: 34.730063351039846, correct: 29
+Epoch: 150/500, loss: 34.68280503304805, correct: 29
+Epoch: 160/500, loss: 34.64012097688017, correct: 29
+Epoch: 170/500, loss: 34.60125016591567, correct: 29
+Epoch: 180/500, loss: 34.56564804309014, correct: 29
+Epoch: 190/500, loss: 34.53290344395267, correct: 29
+Epoch: 200/500, loss: 34.50269115226991, correct: 29
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 33.653731219538365, correct: 29
+Epoch: 20/500, loss: 31.83638850809329, correct: 29
+Epoch: 30/500, loss: 30.777500731491088, correct: 29
+Epoch: 40/500, loss: 29.618298556029504, correct: 29
+Epoch: 50/500, loss: 28.274890293573126, correct: 29
+Epoch: 60/500, loss: 26.76873784152184, correct: 29
+Epoch: 70/500, loss: 25.134431702306838, correct: 29
+Epoch: 80/500, loss: 23.35343099361594, correct: 41
+Epoch: 90/500, loss: 21.546152047359453, correct: 42
+Epoch: 10/500, loss: 35.054552061440624, correct: 29
+Epoch: 20/500, loss: 34.40692550590667, correct: 29
+Epoch: 30/500, loss: 34.16864442593126, correct: 29
+Epoch: 40/500, loss: 34.08172653670251, correct: 29
+Epoch: 50/500, loss: 34.05008309558621, correct: 29
+Epoch: 60/500, loss: 34.03840014246399, correct: 29
+Epoch: 70/500, loss: 34.03387314480681, correct: 29
+Epoch: 80/500, loss: 34.03190537245642, correct: 29
+Epoch: 90/500, loss: 34.030857223264114, correct: 29
+Epoch: 100/500, loss: 34.030145980882125, correct: 29
+Epoch: 110/500, loss: 34.02956478711868, correct: 29
+Epoch: 120/500, loss: 34.029040061493895, correct: 29
+Epoch: 130/500, loss: 34.02854541185552, correct: 29
+Epoch: 140/500, loss: 34.02807114660382, correct: 29
+Epoch: 150/500, loss: 34.02761349004256, correct: 29
+Epoch: 160/500, loss: 34.027170769445085, correct: 29
+Epoch: 170/500, loss: 34.02674206705523, correct: 29
+Epoch: 180/500, loss: 34.02632674327351, correct: 29
+Epoch: 190/500, loss: 34.025924267712014, correct: 29
+Epoch: 200/500, loss: 34.0255341590506, correct: 29
+Epoch: 210/500, loss: 34.025155963354486, correct: 29
+Epoch: 220/500, loss: 34.02478924599858, correct: 29
+Epoch: 230/500, loss: 34.024433588414155, correct: 29
+Epoch: 240/500, loss: 34.024088586555536, correct: 29
+Epoch: 250/500, loss: 34.02375384998974, correct: 29
+Epoch: 260/500, loss: 34.023429001220734, correct: 29
+Epoch: 270/500, loss: 34.02311367511149, correct: 29
+Epoch: 280/500, loss: 34.022807518353986, correct: 29
+Epoch: 290/500, loss: 34.02251018896982, correct: 29
+Epoch: 300/500, loss: 34.02222135583408, correct: 29
+Epoch: 310/500, loss: 34.0219406982192, correct: 29
+Epoch: 320/500, loss: 34.02166790535819, correct: 29
+Epoch: 330/500, loss: 34.02140267602435, correct: 29
+Epoch: 340/500, loss: 34.021144718128106, correct: 29
+Epoch: 350/500, loss: 34.02089374832916, correct: 29
+Epoch: 360/500, loss: 34.02064949166339, correct: 29
+Epoch: 370/500, loss: 34.0204116811837, correct: 29
+Epoch: 380/500, loss: 34.02018005761439, correct: 29
+Epoch: 390/500, loss: 34.01995436901776, correct: 29
+Epoch: 400/500, loss: 34.01973437047287, correct: 29
+Epoch: 410/500, loss: 34.019519823765606, correct: 29
+Epoch: 420/500, loss: 34.019310497089194, correct: 29
+Epoch: 430/500, loss: 34.019106164755435, correct: 29
+Epoch: 440/500, loss: 34.01890660691481, correct: 29
+Epoch: 450/500, loss: 34.01871160928647, correct: 29
+Epoch: 460/500, loss: 34.018520962896524, correct: 29
+Epoch: 470/500, loss: 34.01833446382424, correct: 29
+Epoch: 480/500, loss: 34.01815191295654, correct: 29
+Epoch: 490/500, loss: 34.017973115749484, correct: 29
+Epoch: 500/500, loss: 34.01779788199684, correct: 29
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 34.02100687780748, correct: 29
+Epoch: 20/500, loss: 34.015079728045684, correct: 29
+Epoch: 30/500, loss: 34.01463577966572, correct: 29
+Epoch: 40/500, loss: 34.01460267382034, correct: 29
+Epoch: 50/500, loss: 34.014600207982596, correct: 29
+Epoch: 60/500, loss: 34.01460002437726, correct: 29
+Epoch: 70/500, loss: 34.01460001070726, correct: 29
+Epoch: 80/500, loss: 34.014600009689545, correct: 29
+Epoch: 90/500, loss: 34.01460000961377, correct: 29
+Epoch: 100/500, loss: 34.014600009608124, correct: 29
+Epoch: 110/500, loss: 34.01460000960773, correct: 29
+Epoch: 120/500, loss: 34.01460000960768, correct: 29
+Epoch: 130/500, loss: 34.01460000960766, correct: 29
+Epoch: 140/500, loss: 34.01460000960765, correct: 29
+Epoch: 150/500, loss: 34.01460000960769, correct: 29
+Epoch: 160/500, loss: 34.01460000960767, correct: 29
+Epoch: 170/500, loss: 34.014600009607655, correct: 29
+Epoch: 180/500, loss: 34.01460000960769, correct: 29
+Epoch: 190/500, loss: 34.0146000096077, correct: 29
+Epoch: 200/500, loss: 34.01460000960766, correct: 29
+Epoch: 210/500, loss: 34.01460000960769, correct: 29
+Epoch: 220/500, loss: 34.01460000960769, correct: 29
+Epoch: 230/500, loss: 34.0146000096077, correct: 29
+Epoch: 240/500, loss: 34.01460000960768, correct: 29
+Epoch: 250/500, loss: 34.014600009607676, correct: 29
+Epoch: 260/500, loss: 34.014600009607676, correct: 29
+Epoch: 270/500, loss: 34.014600009607676, correct: 29
+Epoch: 280/500, loss: 34.014600009607676, correct: 29
+Epoch: 290/500, loss: 34.014600009607676, correct: 29
+Epoch: 300/500, loss: 34.014600009607676, correct: 29
+Epoch: 310/500, loss: 34.014600009607676, correct: 29
+Epoch: 320/500, loss: 34.014600009607676, correct: 29
+Epoch: 330/500, loss: 34.014600009607676, correct: 29
+Epoch: 340/500, loss: 34.014600009607676, correct: 29
+Epoch: 350/500, loss: 34.014600009607676, correct: 29
+Epoch: 360/500, loss: 34.014600009607676, correct: 29
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 33.931785063103746, correct: 29
+Epoch: 20/500, loss: 32.843502727381356, correct: 29
+Epoch: 30/500, loss: 24.690644641268673, correct: 39
+Epoch: 40/500, loss: 15.092474512228494, correct: 49
+Epoch: 50/500, loss: 11.700386579960917, correct: 48
+Epoch: 60/500, loss: 19.609909520359253, correct: 43
+Epoch: 70/500, loss: 5.3657261682121264, correct: 49
+Epoch: 80/500, loss: 3.9052286011795987, correct: 49
+Epoch: 90/500, loss: 3.1147806411869015, correct: 49
+Epoch: 100/500, loss: 2.6333403722447617, correct: 49
+Epoch: 110/500, loss: 2.4537382660762135, correct: 49
+Epoch: 120/500, loss: 4.393161955681984, correct: 49
+Epoch: 130/500, loss: 9.449390749513388, correct: 47
+Epoch: 140/500, loss: 2.16247118486205, correct: 50
+Epoch: 150/500, loss: 1.745956074423281, correct: 50
+Epoch: 160/500, loss: 1.4695946086005456, correct: 50
+Epoch: 170/500, loss: 1.2652575726789999, correct: 50
+Epoch: 180/500, loss: 1.1063446722678782, correct: 50
+Epoch: 190/500, loss: 0.9797268885222458, correct: 50
+Epoch: 200/500, loss: 0.8751080263020096, correct: 50
+Epoch: 210/500, loss: 0.7910656014056496, correct: 50
+Epoch: 220/500, loss: 0.721100419815244, correct: 50
+Epoch: 230/500, loss: 0.6661994841830481, correct: 50
+Epoch: 240/500, loss: 0.6157083802932783, correct: 50
+Epoch: 250/500, loss: 0.572176297108658, correct: 50
+Epoch: 260/500, loss: 0.5347323894963653, correct: 50
+Epoch: 270/500, loss: 0.5012798373582068, correct: 50
+Epoch: 280/500, loss: 0.47167730401080404, correct: 50
+Epoch: 290/500, loss: 0.444813387940651, correct: 50
+Epoch: 300/500, loss: 0.42083496975319873, correct: 50
+Epoch: 310/500, loss: 0.39932749319542127, correct: 50
+Epoch: 320/500, loss: 0.3798871712303191, correct: 50
+Epoch: 330/500, loss: 0.36261494823689644, correct: 50
+Epoch: 340/500, loss: 0.3466048487117077, correct: 50
+Epoch: 350/500, loss: 0.3297142185208827, correct: 50
+Epoch: 360/500, loss: 0.31590303410797826, correct: 50
+Epoch: 370/500, loss: 0.30420356083980093, correct: 50
+Epoch: 380/500, loss: 0.2909941300460551, correct: 50
+Epoch: 390/500, loss: 0.2800941001825366, correct: 50
+Epoch: 400/500, loss: 0.27060014736963744, correct: 50
+Epoch: 410/500, loss: 0.26011573253368353, correct: 50
+Epoch: 420/500, loss: 0.25182417998224743, correct: 50
+Epoch: 430/500, loss: 0.24263027516967828, correct: 50
+Epoch: 440/500, loss: 0.23532843739734685, correct: 50
+Epoch: 450/500, loss: 0.22721473800173425, correct: 50
+Epoch: 460/500, loss: 0.22073779439263805, correct: 50
+Epoch: 470/500, loss: 0.21353470682212494, correct: 50
+Epoch: 480/500, loss: 0.20778318478763105, correct: 50
+Epoch: 490/500, loss: 0.2013726952956526, correct: 50
+Epoch: 500/500, loss: 0.1962647556446954, correct: 50
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 13.996283179123932, correct: 46
+Epoch: 20/500, loss: 13.94021094041115, correct: 46
+Epoch: 30/500, loss: 13.938469584686715, correct: 46
+Epoch: 40/500, loss: 13.938468594472493, correct: 46
+Epoch: 50/500, loss: 13.938468588466026, correct: 46
+Epoch: 60/500, loss: 13.938468588429581, correct: 46
+Epoch: 70/500, loss: 13.938468588429377, correct: 46
+Epoch: 80/500, loss: 13.938468588429373, correct: 46
+Epoch: 90/500, loss: 13.938468588429371, correct: 46
+Epoch: 100/500, loss: 13.938468588429362, correct: 46
+Epoch: 110/500, loss: 13.93846858842937, correct: 46
+Epoch: 120/500, loss: 13.938468588429364, correct: 46
+Epoch: 130/500, loss: 13.938468588429368, correct: 46
+Epoch: 140/500, loss: 13.938468588429377, correct: 46
+Epoch: 150/500, loss: 13.938468588429377, correct: 46
+Epoch: 160/500, loss: 13.938468588429377, correct: 46
+Epoch: 170/500, loss: 13.938468588429377, correct: 46
+Epoch: 180/500, loss: 13.938468588429377, correct: 46
+Epoch: 190/500, loss: 13.938468588429377, correct: 46
+Epoch: 200/500, loss: 13.938468588429377, correct: 46
+Epoch: 210/500, loss: 13.938468588429377, correct: 46
+Epoch: 220/500, loss: 13.938468588429377, correct: 46
+Epoch: 230/500, loss: 13.938468588429377, correct: 46
+Epoch: 240/500, loss: 13.938468588429377, correct: 46
+Epoch: 250/500, loss: 13.938468588429377, correct: 46
+Epoch: 260/500, loss: 13.938468588429377, correct: 46
+Epoch: 270/500, loss: 13.938468588429377, correct: 46
+Epoch: 280/500, loss: 13.938468588429377, correct: 46
+Epoch: 290/500, loss: 13.938468588429377, correct: 46
+Epoch: 300/500, loss: 13.938468588429377, correct: 46
+Epoch: 310/500, loss: 13.938468588429377, correct: 46
+Epoch: 320/500, loss: 13.938468588429377, correct: 46
+Epoch: 330/500, loss: 13.938468588429377, correct: 46
+Epoch: 340/500, loss: 13.938468588429377, correct: 46
+Epoch: 350/500, loss: 13.938468588429377, correct: 46
+Epoch: 360/500, loss: 13.938468588429377, correct: 46
+Epoch: 370/500, loss: 13.938468588429377, correct: 46
+Epoch: 380/500, loss: 13.938468588429377, correct: 46
+Epoch: 390/500, loss: 13.938468588429377, correct: 46
+Epoch: 400/500, loss: 13.938468588429377, correct: 46
+Epoch: 410/500, loss: 13.938468588429377, correct: 46
+Epoch: 420/500, loss: 13.938468588429377, correct: 46
+Epoch: 430/500, loss: 13.938468588429377, correct: 46
+Epoch: 440/500, loss: 13.938468588429377, correct: 46
+Epoch: 450/500, loss: 13.938468588429377, correct: 46
+Epoch: 460/500, loss: 13.938468588429377, correct: 46
+Epoch: 470/500, loss: 13.938468588429377, correct: 46
+Epoch: 480/500, loss: 13.938468588429377, correct: 46
+Epoch: 490/500, loss: 13.938468588429377, correct: 46
+Epoch: 500/500, loss: 13.938468588429377, correct: 46
+Epoch: 10/500, loss: 15.189670513310128, correct: 46
+Epoch: 20/500, loss: 14.102637231551665, correct: 46
+Epoch: 30/500, loss: 13.967970965155036, correct: 46
+Epoch: 40/500, loss: 13.944371718689686, correct: 46
+Epoch: 50/500, loss: 13.939703046401217, correct: 46
+Epoch: 60/500, loss: 13.938731807719, correct: 46
+Epoch: 70/500, loss: 13.938525211738241, correct: 46
+Epoch: 80/500, loss: 13.938480818766003, correct: 46
+Epoch: 90/500, loss: 13.938471235096072, correct: 46
+Epoch: 100/500, loss: 13.938469161673805, correct: 46
+Epoch: 110/500, loss: 13.93846871263951, correct: 46
+Epoch: 120/500, loss: 13.938468615348206, correct: 46
+Epoch: 130/500, loss: 13.938468594263753, correct: 46
+Epoch: 140/500, loss: 13.938468589693958, correct: 46
+Epoch: 150/500, loss: 13.938468588703463, correct: 46
+Epoch: 160/500, loss: 13.938468588488774, correct: 46
+Epoch: 170/500, loss: 13.938468588442255, correct: 46
+Epoch: 180/500, loss: 13.938468588432167, correct: 46
+Epoch: 190/500, loss: 13.938468588429984, correct: 46
+Epoch: 200/500, loss: 13.9384685884295, correct: 46
+Epoch: 210/500, loss: 13.938468588429389, correct: 46
+Epoch: 220/500, loss: 13.938468588429373, correct: 46
+Epoch: 230/500, loss: 13.938468588429364, correct: 46
+Epoch: 240/500, loss: 13.93846858842937, correct: 46
+Epoch: 250/500, loss: 13.938468588429384, correct: 46
+Epoch: 260/500, loss: 13.938468588429384, correct: 46
+Epoch: 270/500, loss: 13.938468588429366, correct: 46
+Epoch: 280/500, loss: 13.93846858842937, correct: 46
+Epoch: 290/500, loss: 13.93846858842938, correct: 46
+Epoch: 300/500, loss: 13.93846858842937, correct: 46
+Epoch: 310/500, loss: 13.938468588429359, correct: 46
+Epoch: 320/500, loss: 13.938468588429377, correct: 46
+Epoch: 330/500, loss: 13.938468588429366, correct: 46
+Epoch: 340/500, loss: 13.938468588429368, correct: 46
+Epoch: 350/500, loss: 13.938468588429375, correct: 46
+Epoch: 360/500, loss: 13.938468588429366, correct: 46
+Epoch: 370/500, loss: 13.938468588429366, correct: 46
+Epoch: 380/500, loss: 13.938468588429377, correct: 46
+Epoch: 390/500, loss: 13.938468588429366, correct: 46
+Epoch: 400/500, loss: 13.938468588429375, correct: 46
+Epoch: 410/500, loss: 13.93846858842936, correct: 46
+Epoch: 420/500, loss: 13.938468588429362, correct: 46
+Epoch: 430/500, loss: 13.938468588429366, correct: 46
+Epoch: 440/500, loss: 13.93846858842937, correct: 46
+Epoch: 450/500, loss: 13.93846858842937, correct: 46
+Epoch: 460/500, loss: 13.93846858842937, correct: 46
+Epoch: 470/500, loss: 13.93846858842937, correct: 46
+Epoch: 480/500, loss: 13.93846858842937, correct: 46
+Epoch: 490/500, loss: 13.93846858842937, correct: 46
+Epoch: 500/500, loss: 13.93846858842937, correct: 46
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 13.938501343556274, correct: 46
+Epoch: 20/500, loss: 13.938468591792205, correct: 46
+Epoch: 30/500, loss: 13.938468588429707, correct: 46
+Epoch: 40/500, loss: 13.938468588429366, correct: 46
+Epoch: 50/500, loss: 13.938468588429375, correct: 46
+Epoch: 60/500, loss: 13.938468588429366, correct: 46
+Epoch: 70/500, loss: 13.938468588429366, correct: 46
+Epoch: 80/500, loss: 13.93846858842938, correct: 46
+Epoch: 90/500, loss: 13.93846858842938, correct: 46
+Epoch: 100/500, loss: 13.93846858842938, correct: 46
+Epoch: 110/500, loss: 13.93846858842938, correct: 46
+Epoch: 120/500, loss: 13.93846858842938, correct: 46
+Epoch: 130/500, loss: 13.93846858842938, correct: 46
+Epoch: 140/500, loss: 13.93846858842938, correct: 46
+Epoch: 150/500, loss: 13.93846858842938, correct: 46
+Epoch: 160/500, loss: 13.93846858842938, correct: 46
+Epoch: 170/500, loss: 13.93846858842938, correct: 46
+Epoch: 180/500, loss: 13.93846858842938, correct: 46
+Epoch: 190/500, loss: 13.93846858842938, correct: 46
+Epoch: 200/500, loss: 13.93846858842938, correct: 46
+Epoch: 210/500, loss: 13.93846858842938, correct: 46
+Epoch: 220/500, loss: 13.93846858842938, correct: 46
+Epoch: 230/500, loss: 13.93846858842938, correct: 46
+Epoch: 240/500, loss: 13.93846858842938, correct: 46
+Epoch: 250/500, loss: 13.93846858842938, correct: 46
+Epoch: 260/500, loss: 13.93846858842938, correct: 46
+Epoch: 270/500, loss: 13.93846858842938, correct: 46
+Epoch: 280/500, loss: 13.93846858842938, correct: 46
+Epoch: 290/500, loss: 13.93846858842938, correct: 46
+Epoch: 300/500, loss: 13.93846858842938, correct: 46
+Epoch: 310/500, loss: 13.93846858842938, correct: 46
+Epoch: 320/500, loss: 13.93846858842938, correct: 46
+Epoch: 330/500, loss: 13.93846858842938, correct: 46
+Epoch: 340/500, loss: 13.93846858842938, correct: 46
+Epoch: 350/500, loss: 13.93846858842938, correct: 46
+Epoch: 360/500, loss: 13.93846858842938, correct: 46
+Epoch: 370/500, loss: 13.93846858842938, correct: 46
+Epoch: 380/500, loss: 13.93846858842938, correct: 46
+Epoch: 390/500, loss: 13.93846858842938, correct: 46
+Epoch: 400/500, loss: 13.93846858842938, correct: 46
+Epoch: 410/500, loss: 13.93846858842938, correct: 46
+Epoch: 420/500, loss: 13.93846858842938, correct: 46
+Epoch: 430/500, loss: 13.93846858842938, correct: 46
+Epoch: 440/500, loss: 13.93846858842938, correct: 46
+Epoch: 450/500, loss: 13.93846858842938, correct: 46
+Epoch: 460/500, loss: 13.93846858842938, correct: 46
+Epoch: 470/500, loss: 13.93846858842938, correct: 46
+Epoch: 480/500, loss: 13.93846858842938, correct: 46
+Epoch: 490/500, loss: 13.93846858842938, correct: 46
+Epoch: 500/500, loss: 13.93846858842938, correct: 46
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 32.270793419763535, correct: 46
+Epoch: 20/500, loss: 31.056300323101183, correct: 46
+Epoch: 30/500, loss: 29.911603427305817, correct: 46
+Epoch: 40/500, loss: 28.876080385714037, correct: 46
+Epoch: 50/500, loss: 27.916284116568075, correct: 46
+Epoch: 60/500, loss: 27.028394380115554, correct: 46
+Epoch: 70/500, loss: 26.210861291848317, correct: 46
+Epoch: 80/500, loss: 25.441011425014256, correct: 46
+Epoch: 90/500, loss: 24.711356769624857, correct: 46
+Epoch: 100/500, loss: 24.018473490235944, correct: 46
+Epoch: 110/500, loss: 23.365872399288197, correct: 46
+Epoch: 120/500, loss: 22.73830606171274, correct: 46
+Epoch: 130/500, loss: 22.143410993341025, correct: 46
+Epoch: 140/500, loss: 21.580487665090207, correct: 46
+Epoch: 150/500, loss: 21.05759341643114, correct: 46
+Epoch: 160/500, loss: 20.5672952107905, correct: 46
+Epoch: 170/500, loss: 20.105274008305773, correct: 46
+Epoch: 180/500, loss: 19.668519520335835, correct: 46
+Epoch: 190/500, loss: 19.25645103822108, correct: 46
+Epoch: 200/500, loss: 18.868195801800017, correct: 46
+Epoch: 210/500, loss: 18.503085564210387, correct: 46
+Epoch: 220/500, loss: 18.160577594266584, correct: 46
+Epoch: 230/500, loss: 17.83956537097348, correct: 46
+Epoch: 240/500, loss: 17.539341423590116, correct: 46
+Epoch: 250/500, loss: 17.25920884617747, correct: 46
+Epoch: 260/500, loss: 16.998078518188134, correct: 46
+Epoch: 270/500, loss: 16.75509646789414, correct: 46
+Epoch: 280/500, loss: 16.529583502678985, correct: 46
+Epoch: 290/500, loss: 16.320246512092144, correct: 46
+Epoch: 300/500, loss: 16.126375679146097, correct: 46
+Epoch: 310/500, loss: 15.947323313533277, correct: 46
+Epoch: 320/500, loss: 15.7820276318932, correct: 46
+Epoch: 330/500, loss: 15.629572489599857, correct: 46
+Epoch: 340/500, loss: 15.488747546916008, correct: 46
+Epoch: 350/500, loss: 15.358909822177921, correct: 46
+Epoch: 360/500, loss: 15.239545944923421, correct: 46
+Epoch: 370/500, loss: 15.129793731888658, correct: 46
+Epoch: 380/500, loss: 15.028908699407474, correct: 46
+Epoch: 390/500, loss: 14.93619945425313, correct: 46
+Epoch: 400/500, loss: 14.851015576125494, correct: 46
+Epoch: 410/500, loss: 14.77274745406862, correct: 46
+Epoch: 420/500, loss: 14.700825653804415, correct: 46
+Epoch: 430/500, loss: 14.634719904616446, correct: 46
+Epoch: 440/500, loss: 14.573937787072888, correct: 46
+Epoch: 450/500, loss: 14.518023194409096, correct: 46
+Epoch: 460/500, loss: 14.466554631447744, correct: 46
+Epoch: 470/500, loss: 14.419143406010795, correct: 46
+Epoch: 480/500, loss: 14.375431759219081, correct: 46
+Epoch: 490/500, loss: 14.33509097311558, correct: 46
+Epoch: 500/500, loss: 14.297819486825167, correct: 46
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 29.716451206483452, correct: 37
+Epoch: 20/500, loss: 26.182561903505317, correct: 45
+Epoch: 30/500, loss: 23.62559281556668, correct: 46
+Epoch: 40/500, loss: 21.734983639788894, correct: 46
+Epoch: 50/500, loss: 20.34248647071789, correct: 46
+Epoch: 60/500, loss: 19.27834949500683, correct: 46
+Epoch: 70/500, loss: 18.47536933117448, correct: 46
+Epoch: 80/500, loss: 17.849733840171922, correct: 46
+Epoch: 90/500, loss: 17.361623492524316, correct: 46
+Epoch: 100/500, loss: 16.98477199838931, correct: 46
+Epoch: 110/500, loss: 16.67901089357362, correct: 46
+Epoch: 120/500, loss: 16.435251907391226, correct: 46
+Epoch: 130/500, loss: 16.236112588435006, correct: 46
+Epoch: 140/500, loss: 16.070388502138975, correct: 46
+Epoch: 150/500, loss: 15.93037743256907, correct: 46
+Epoch: 160/500, loss: 15.807802690412066, correct: 46
+Epoch: 170/500, loss: 15.698605352815271, correct: 46
+Epoch: 180/500, loss: 15.601801880046752, correct: 46
+Epoch: 190/500, loss: 15.513805485720177, correct: 46
+Epoch: 200/500, loss: 15.433185115338203, correct: 46
+Epoch: 210/500, loss: 15.358672569856948, correct: 46
+Epoch: 220/500, loss: 15.288724036961078, correct: 46
+Epoch: 230/500, loss: 15.222826272715908, correct: 46
+Epoch: 240/500, loss: 15.159739967120398, correct: 46
+Epoch: 250/500, loss: 15.09904178461593, correct: 46
+Epoch: 260/500, loss: 15.041047937473278, correct: 46
+Epoch: 270/500, loss: 14.985171042123492, correct: 46
+Epoch: 280/500, loss: 14.931627593467397, correct: 46
+Epoch: 290/500, loss: 14.879609067603543, correct: 46
+Epoch: 300/500, loss: 14.828766664810795, correct: 46
+Epoch: 310/500, loss: 14.779030512819368, correct: 46
+Epoch: 320/500, loss: 14.730376904214769, correct: 46
+Epoch: 330/500, loss: 14.682984255928023, correct: 46
+Epoch: 340/500, loss: 14.63652687996918, correct: 46
+Epoch: 350/500, loss: 14.590899335462773, correct: 46
+Epoch: 360/500, loss: 14.546199766687796, correct: 46
+Epoch: 370/500, loss: 14.502113731663957, correct: 46
+Epoch: 380/500, loss: 14.458634643292983, correct: 46
+Epoch: 390/500, loss: 14.416118307046828, correct: 46
+Epoch: 400/500, loss: 14.37444278011485, correct: 46
+Epoch: 410/500, loss: 14.333284849638186, correct: 46
+Epoch: 420/500, loss: 14.292674354309012, correct: 46
+Epoch: 430/500, loss: 14.252705479600447, correct: 46
+Epoch: 440/500, loss: 14.214274843312877, correct: 46
+Epoch: 450/500, loss: 14.17664380770499, correct: 46
+Epoch: 460/500, loss: 14.139627853996938, correct: 46
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 0/500, loss: 0, correct: 0
+^[[AEpoch: 10/500, loss: 27.704647422106802, correct: 46
+Epoch: 20/500, loss: 27.008288304739413, correct: 46
+Epoch: 30/500, loss: 26.359217296361564, correct: 46
+Epoch: 40/500, loss: 25.75294910918428, correct: 46
+Epoch: 50/500, loss: 25.1855576085027, correct: 46
+Epoch: 60/500, loss: 24.653590951022046, correct: 46
+Epoch: 70/500, loss: 24.154165229527244, correct: 46
+Epoch: 80/500, loss: 23.684971489275437, correct: 46
+Epoch: 90/500, loss: 23.3158460269706, correct: 46
+Epoch: 100/500, loss: 22.981395212782253, correct: 46
+Epoch: 110/500, loss: 22.66265999285604, correct: 46
+Epoch: 120/500, loss: 22.359014237726313, correct: 46
+Epoch: 130/500, loss: 22.069593880332235, correct: 46
+Epoch: 140/500, loss: 21.79256726626547, correct: 46
+Epoch: 150/500, loss: 21.527299553594613, correct: 46
+Epoch: 160/500, loss: 21.27319234136945, correct: 46
+Epoch: 170/500, loss: 21.029681497767353, correct: 46
+Epoch: 180/500, loss: 20.796235106056887, correct: 46
+Epoch: 190/500, loss: 20.57235152505944, correct: 46
+Epoch: 200/500, loss: 20.35755889295592, correct: 46
+Epoch: 210/500, loss: 20.152348171011226, correct: 46
+Epoch: 220/500, loss: 19.955301816547145, correct: 46
+Epoch: 230/500, loss: 19.76641294396237, correct: 46
+Epoch: 240/500, loss: 19.5852697445147, correct: 46
+Epoch: 250/500, loss: 19.411131571793458, correct: 46
+Epoch: 260/500, loss: 19.243669297244278, correct: 46
+Epoch: 270/500, loss: 19.08257169452838, correct: 46
+Epoch: 280/500, loss: 18.928480869719564, correct: 46
+Epoch: 290/500, loss: 18.780268429066727, correct: 46
+Epoch: 300/500, loss: 18.63752962588956, correct: 46
+Epoch: 310/500, loss: 18.500018264874267, correct: 46
+Epoch: 320/500, loss: 18.367501079417863, correct: 46
+Epoch: 330/500, loss: 18.24002813058455, correct: 46
+Epoch: 340/500, loss: 18.11716193419131, correct: 46
+Epoch: 350/500, loss: 17.99864505274571, correct: 46
+Epoch: 360/500, loss: 17.884289732000855, correct: 46
+Epoch: 370/500, loss: 17.773917740762027, correct: 46
+Epoch: 380/500, loss: 17.667359825881007, correct: 46
+Epoch: 390/500, loss: 17.564455201053445, correct: 46
+Epoch: 400/500, loss: 17.465051067249572, correct: 46
+Epoch: 410/500, loss: 17.369002162743403, correct: 46
+Epoch: 420/500, loss: 17.276170340832024, correct: 46
+Epoch: 430/500, loss: 17.186424173457628, correct: 46
+Epoch: 440/500, loss: 17.09965934375222, correct: 46
+Epoch: 450/500, loss: 17.01593759549287, correct: 46
+Epoch: 460/500, loss: 16.934995024610252, correct: 46
+Epoch: 470/500, loss: 16.85666141704918, correct: 46
+Epoch: 480/500, loss: 16.78083437512317, correct: 46
+Epoch: 490/500, loss: 16.707416264162795, correct: 46
+Epoch: 500/500, loss: 16.636313958490323, correct: 46
+Epoch: 0/500, loss: 0, correct: 0
+Epoch: 10/500, loss: 17.203711302768745, correct: 46
+Epoch: 20/500, loss: 15.914788553324435, correct: 46
+Epoch: 30/500, loss: 15.075230407421104, correct: 46
+Epoch: 40/500, loss: 14.49405778558281, correct: 46
+Epoch: 50/500, loss: 14.067544667520858, correct: 46
+Epoch: 60/500, loss: 13.742732063271513, correct: 46
+Epoch: 70/500, loss: 13.482664580747292, correct: 46
+Epoch: 80/500, loss: 13.258704886650655, correct: 46
+Epoch: 90/500, loss: 13.052659198967937, correct: 46
+Epoch: 100/500, loss: 12.854686252797956, correct: 46
+Epoch: 110/500, loss: 12.658395145738819, correct: 46
+Epoch: 120/500, loss: 12.462832122329635, correct: 46
+Epoch: 130/500, loss: 12.263826271623865, correct: 46
+Epoch: 140/500, loss: 12.058331582000234, correct: 46
+Epoch: 150/500, loss: 11.842574784932049, correct: 46
+Epoch: 160/500, loss: 11.614696221423738, correct: 46
+Epoch: 170/500, loss: 11.372420689789216, correct: 46
+Epoch: 180/500, loss: 11.114697188856947, correct: 46
+Epoch: 190/500, loss: 10.841798407808096, correct: 46
+Epoch: 200/500, loss: 10.55566339852098, correct: 46
+Epoch: 210/500, loss: 10.256002342544413, correct: 46
+Epoch: 220/500, loss: 9.942625218694893, correct: 46
+Epoch: 230/500, loss: 9.622784708342712, correct: 46
+Epoch: 240/500, loss: 9.292887232979577, correct: 46
+Epoch: 250/500, loss: 8.95431978349669, correct: 46
+Epoch: 260/500, loss: 8.609517210223038, correct: 46
+Epoch: 270/500, loss: 8.264885045672369, correct: 46
+Epoch: 280/500, loss: 7.9225746306200895, correct: 46
+Epoch: 290/500, loss: 7.587513800583588, correct: 46
+Epoch: 300/500, loss: 7.25689203694045, correct: 46
+Epoch: 310/500, loss: 6.937368659540072, correct: 46
+Epoch: 320/500, loss: 6.628863035706936, correct: 46
+Epoch: 330/500, loss: 6.332870479743209, correct: 47
+Epoch: 340/500, loss: 6.050612896455352, correct: 48
+Epoch: 350/500, loss: 5.7828063497087685, correct: 48
+Epoch: 360/500, loss: 5.5283299150648695, correct: 48
+Epoch: 370/500, loss: 5.287046950506225, correct: 49
+Epoch: 380/500, loss: 5.0644020910183505, correct: 49
+Epoch: 390/500, loss: 4.85553993610449, correct: 49
+Epoch: 400/500, loss: 4.658389185508036, correct: 49
+Epoch: 410/500, loss: 4.473214513383496, correct: 49
+Epoch: 420/500, loss: 4.299254777763147, correct: 49
+Epoch: 430/500, loss: 4.136066958465138, correct: 49
+Epoch: 440/500, loss: 3.9831547530581384, correct: 49
+Epoch: 450/500, loss: 3.8397805428555514, correct: 49
+Epoch: 460/500, loss: 3.70540578462275, correct: 49
+Epoch: 470/500, loss: 3.5796024617627022, correct: 49
+Epoch: 480/500, loss: 3.462716926356704, correct: 49
+Epoch: 490/500, loss: 3.3542346087118173, correct: 49
+Epoch: 500/500, loss: 3.2535431170414024, correct: 50

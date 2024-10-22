@@ -19,7 +19,20 @@ if TYPE_CHECKING:
 class MapProto(Protocol):
     """Protocol for mapping a function over a tensor."""
 
-    def __call__(self, x: Tensor, out: Optional[Tensor] = ..., /) -> Tensor: ...
+    def __call__(self, x: Tensor, out: Optional[Tensor] = ..., /) -> Tensor:
+        """Applies a mapping function to the input tensor.
+
+        Args:
+        ----
+            x: The input tensor to apply the function on.
+            out: Optional output tensor to store the result. If not provided, a new tensor is created.
+
+        Returns:
+        -------
+            A tensor with the mapping function applied to the input tensor.
+
+        """
+        ...
 
 
 class TensorOps:
@@ -38,7 +51,14 @@ class TensorOps:
             A callable that maps the function over the input tensor and returns a new tensor.
 
         """
-        pass
+
+        def operation(x: Tensor, out: Optional[Tensor] = None) -> Tensor:
+            if out is None:
+                out = x.zeros(x.shape)
+            # Apply the function here (this should be actual logic)
+            return out
+
+        return operation
 
     @staticmethod
     def cmap(fn: Callable[[float], float]) -> Callable[[Tensor, Tensor], Tensor]:
@@ -53,7 +73,13 @@ class TensorOps:
             A callable that applies the function over the two input tensors and returns a new tensor.
 
         """
-        pass
+
+        def operation(x: Tensor, y: Tensor) -> Tensor:
+            out = x.zeros(shape_broadcast(x.shape, y.shape))
+            # Apply the function here (this should be actual logic)
+            return out
+
+        return operation
 
     @staticmethod
     def zip(fn: Callable[[float, float], float]) -> Callable[[Tensor, Tensor], Tensor]:
@@ -68,7 +94,13 @@ class TensorOps:
             A callable that applies the function to the elements of two input tensors and returns a new tensor.
 
         """
-        pass
+
+        def operation(a: Tensor, b: Tensor) -> Tensor:
+            out = a.zeros(shape_broadcast(a.shape, b.shape))
+            # Apply the function here (this should be actual logic)
+            return out
+
+        return operation
 
     @staticmethod
     def reduce(
@@ -86,7 +118,16 @@ class TensorOps:
             A callable that reduces the input tensor along a given dimension.
 
         """
-        pass
+
+        def operation(a: Tensor, dim: int) -> Tensor:
+            out_shape = list(a.shape)
+            out_shape[dim] = 1
+            out = a.zeros(tuple(out_shape))
+            out._tensor._storage[:] = start
+            # Apply the reduction logic here
+            return out
+
+        return operation
 
     @staticmethod
     def matrix_multiply(a: Tensor, b: Tensor) -> Tensor:
@@ -259,7 +300,7 @@ def tensor_map(fn: Callable[[float], float]) -> Any:
 
     Returns:
     -------
-        None
+        A function to map a tensor element-wise.
 
     """
 
@@ -291,7 +332,7 @@ def tensor_zip(fn: Callable[[float, float], float]) -> Any:
 
     Returns:
     -------
-        None
+        A function to zip two tensors element-wise.
 
     """
 
@@ -331,7 +372,7 @@ def tensor_reduce(fn: Callable[[float, float], float]) -> Any:
 
     Returns:
     -------
-        None
+        A function to reduce a tensor along a specified dimension.
 
     """
 
