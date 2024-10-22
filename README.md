@@ -18,27 +18,27 @@ The files that will be synced are:
 
         minitorch/operators.py minitorch/module.py minitorch/autodiff.py minitorch/scalar.py minitorch/scalar_functions.py minitorch/module.py project/run_manual.py project/run_scalar.py project/datasets.py
 
-##Simple
-1. ![Simple 1](./results/simple/1.png)
-2. ![Simple 2](./results/simple/2.png)
-3. ![Simple 3](./results/simple/3.png)
-4. ![Simple 4](./results/simple/4.png)
+### Simple
+1. ![Simple 1](./images/simple/2.png)
+2. ![Simple 2](./images/simple/2.png)
+3. ![Simple 3](./images/simple/3.png)
+4. ![Simple 4](./images/simple/4.png)
 
-###Diag
-1. ![Diag 1](./results/diag/1.png)
-2. ![Diag 2](./results/diag/2.png)
-3. ![Diag 3](./results/diag/3.png)
-4. ![Diag 4](./results/diag/4.png)
+### Diag
+1. ![Diag 1](./images/diag/1.png)
+2. ![Diag 2](./images/diag/2.png)
+3. ![Diag 3](./images/diag/3.png)
+4. ![Diag 4](./images/diag/4.png)
 
 
-###Split
-1. ![Split 1](./results/split/1.png)
-2. ![Split 2](./results/split/2.png)
-3. ![Split 3](./results/split/3.png)
-4. ![Split 4](./results/split/4.png)
+### Split
+1. ![Split 1](./images/split/1.png)
+2. ![Split 2](./images/split/2.png)
+3. ![Split 3](./images/split/3.png)
+4. ![Split 4](./images/split/4.png)
 
-###XOR
-1. ![XOR 1](./results/xor/1.png)
-2. ![XOR 2](./results/xor/2.png)
-3. ![XOR 3](./results/xor/3.png)
-4. ![XOR 4](./results/xor/4.png)
+### XOR
+1. ![XOR 1](./images/xor/1.png)
+2. ![XOR 2](./images/xor/2.png)
+3. ![XOR 3](./images/xor/3.png)
+4. ![XOR 4](./images/xor/4.png)
